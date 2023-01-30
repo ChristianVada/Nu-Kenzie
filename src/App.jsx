@@ -3,6 +3,7 @@ import "./styles/index.css";
 import { Form } from "./components/Form";
 import { List } from "./components/List";
 import { TotalMoney } from "./components/TotalMoney";
+import img from "./assets/home-img.svg";
 
 function App() {
   const [page, setPage] = useState("landing");
@@ -29,7 +30,7 @@ function App() {
               Iniciar
             </button>
           </div>
-          <img className="main-img" src="./src/assets/home-img.svg" />
+          <img className="main-img" src={img} />
         </div>
       ) : (
         <div className="home__container">
