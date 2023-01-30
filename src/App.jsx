@@ -2,36 +2,64 @@ import { useState } from "react";
 import "./styles/index.css";
 import { Form } from "./components/Form";
 import { List } from "./components/List";
+import { TotalMoney } from "./components/TotalMoney";
 
 function App() {
-  const [page, setPage] = useState("index");
+  const [page, setPage] = useState("landing");
 
   const [listTransactions, setListTransactions] = useState([]);
 
   return (
     <div className="App">
-      {page === "index" ? (
-        <div className="index__container">
-          <p>index page</p>
-          <button type="button" onClick={() => setPage("home")}>
-            Iniciar
-          </button>
+      {page === "landing" ? (
+        <div className="landing__container">
+          <div className="site-description">
+            <p className="logo title title--2">
+              <span>Nu</span> Kenzie
+            </p>
+            <p className="title title--1">
+              Centralize o controle das suas finanças
+            </p>
+            <p className="headline">de forma rápida e segura</p>
+            <button
+              className="button button--main headline"
+              type="button"
+              onClick={() => setPage("home")}
+            >
+              Iniciar
+            </button>
+          </div>
+          <img className="main-img" src="./src/assets/home-img.svg" />
         </div>
       ) : (
         <div className="home__container">
-          <button type="button" onClick={() => setPage("index")}>
-            Voltar
-          </button>
-          <Form
-            listTransactions={listTransactions}
-            setListTransactions={setListTransactions}
-          />
-          <section className="financia-summary__container">
-            <h2>Resumo Financeiro</h2>
-            <ul>
-              <List listTransactions={listTransactions} />
-            </ul>
-          </section>
+          <header>
+            <p className="logo title title--2">
+              <span>Nu</span> Kenzie
+            </p>
+            <button
+              className="button"
+              type="button"
+              onClick={() => setPage("landing")}
+            >
+              Inicio
+            </button>
+          </header>
+          <main>
+            <div className="complete__container">
+              <Form
+                listTransactions={listTransactions}
+                setListTransactions={setListTransactions}
+              />
+              <TotalMoney listTransactions={listTransactions} />
+            </div>
+            <section className="financia-summary__container">
+              <List
+                listTransactions={listTransactions}
+                setListTransactions={setListTransactions}
+              />
+            </section>
+          </main>
         </div>
       )}
     </div>

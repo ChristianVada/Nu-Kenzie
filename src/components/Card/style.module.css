@@ -1,0 +1,56 @@
+.liOut {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  background-color: var(--color-grey-1);
+  padding: 16px 14px;
+  margin-top: 20px;
+  border-left: 4px solid var(--color-grey-2);
+
+  position: relative;
+}
+
+.liIn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  background-color: var(--color-grey-1);
+  padding: 16px 14px;
+  margin-top: 20px;
+  border-left: 4px solid var(--color-secondary);
+
+  position: relative;
+}
+
+.titleType {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.valueButton {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media screen and (min-width: 769px) {
+  .liOut {
+    max-width: 560px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .liIn {
+    max-width: 560px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .valueButton {
+    flex-direction: row;
+    gap: 27px;
+  }
+}
