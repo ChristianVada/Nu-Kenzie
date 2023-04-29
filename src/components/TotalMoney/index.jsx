@@ -8,9 +8,8 @@ export function TotalMoney({ listTransactions }) {
 
   return (
     <section className="total-value__container">
-      {listTransactions === [] ? (
+      {listTransactions.length === 0 ? (
         <>
-          <h2 className="title title--3">Resumo financiero</h2>
           <p>Você ainda não possui nenhum lançamento</p>
         </>
       ) : (

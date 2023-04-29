@@ -16,7 +16,7 @@ export function Form({ listTransactions, setListTransactions }) {
       id: uuid(),
     };
 
-    setListTransactions((oldUsers) => [...oldUsers, obj]);
+    setListTransactions((oldCard) => [...oldCard, obj]);
     setDescripton("");
     setValue("");
     setTypeOfValor("");
